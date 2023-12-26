@@ -19,9 +19,9 @@ const ProfileAvatarButton = () => {
         onClick={() => setOpenProfileMenu((prevState) => !prevState)}
       />
       {openProfileMenu ? (
-        <ChevronDownIcon className='w-4 h-4 ' />
+        <ChevronDownIcon className='w-4 h-4 text-slate-800 dark:text-slate-100' />
       ) : (
-        <ChevronUpIcon className='w-4 h-4 ' />
+        <ChevronUpIcon className='w-4 h-4 text-slate-800 dark:text-slate-100' />
       )}
     </div>
   );

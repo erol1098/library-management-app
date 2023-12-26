@@ -3,7 +3,7 @@
 //add image domain
 const nextConfig = {
   images: {
-    domains: ['localhost', 'placekitten.com'],
+    domains: ['localhost', 'placekitten.com', 'brandmark.io'],
   },
 };
 
