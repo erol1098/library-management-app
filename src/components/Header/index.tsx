@@ -1,9 +1,9 @@
-import { ThemeSwitchButton } from '../UI';
+import HeaderRightSide from './HeaderRightSide';
 
 const Header = () => {
   return (
-    <header className='flex items-center justify-around bg-white h-16 w-full shadow-md'>
-      <ThemeSwitchButton />
+    <header className='flex items-center justify-around bg-white dark:bg-slate-800 h-16 w-full shadow-md'>
+      <HeaderRightSide />
     </header>
   );
 };
