@@ -3,7 +3,20 @@
 //add image domain
 const nextConfig = {
   images: {
-    domains: ['localhost', 'placekitten.com', 'brandmark.io'],
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+      },
+      {
+        protocol: 'https',
+        hostname: 'placekitten.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'brandmark.io',
+      },
+    ],
   },
 };
 
