@@ -24,7 +24,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className='flex '>
+          <main className='flex bg-slate-100 dark:bg-slate-600'>
             <div className='hidden lg:block'>
               <Sidebar />
             </div>

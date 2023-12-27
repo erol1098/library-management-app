@@ -13,26 +13,26 @@ export const MENU_ITEMS: MenuItem[] = [
   {
     title: 'Ödünç Ver',
     icon: 'DocumentPlusIcon',
-    href: '/lend-book',
+    href: '/odunc-ver',
   },
   {
     title: 'Ödünç Verilenler',
     icon: 'DocumentCheckIcon',
-    href: '/lent-books',
+    href: '/odunc-verilen-kitaplar',
   },
   {
-    title: 'Kitap Paneli',
+    title: 'Kitaplar',
     icon: 'BookOpenIcon',
-    href: '/book-panel',
+    href: '/kitaplar',
   },
   {
-    title: 'Öğrenci Paneli',
+    title: 'Öğrenciler',
     icon: 'UserCircleIcon',
-    href: '/student-panel',
+    href: '/ogrenciler',
   },
   {
-    title: 'Yetkili Paneli',
+    title: 'Yönetici Paneli',
     icon: 'Cog6ToothIcon',
-    href: '/user-panel',
+    href: '/yönetici-paneli',
   },
 ];
