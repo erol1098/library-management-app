@@ -9,10 +9,10 @@ interface CustomTableProps {
   };
   header: string[];
   body: {
-    id: string;
+    id?: string;
     title: string;
     author: string;
-    type: string;
+    genre: string;
   }[];
 }
 

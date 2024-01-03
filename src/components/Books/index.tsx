@@ -1,21 +1,44 @@
-import { CustomTable } from '..';
+import { getBooks } from '@/libs/Books';
+import { CustomTable } from '../';
 
-interface BooksProps {
-  caption: {
-    caption: string;
-    description: string;
-  };
-  header: string[];
-  body: {
-    id: string;
-    title: string;
-    author: string;
-    type: string;
-  }[];
+interface Book {
+  id?: string;
+  title: string;
+  author: string;
+  genre: string;
 }
 
-const Books = (props: BooksProps) => {
-  return <CustomTable {...props} />;
+interface Caption {
+  caption: string;
+  description: string;
+}
+interface BookTable {
+  caption: Caption;
+  header: string[];
+  body: Book[];
+}
+
+const Books = async () => {
+  const books: Book[] = await getBooks();
+
+  const bookTable: BookTable = {
+    caption: {
+      caption: 'Kitaplar',
+      description: 'Kitapların listesi',
+    },
+    header: ['Başlık', 'Yazar', 'Tür'],
+    body: books,
+  };
+
+  return (
+    <div className='flex flex-col'>
+      <CustomTable
+        caption={bookTable.caption}
+        header={bookTable.header}
+        body={bookTable.body}
+      />
+    </div>
+  );
 };
 
 export default Books;
