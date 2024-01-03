@@ -8,10 +8,11 @@ interface CustomTableProps {
     description: string;
   };
   header: string[];
-  body: any[];
+  body: Object[];
+  actions?: Object[];
 }
 
-const CustomTable = ({ caption, header, body }: CustomTableProps) => {
+const CustomTable = ({ caption, header, body, actions }: CustomTableProps) => {
   return (
     <div className='relative overflow-x-auto shadow-md sm:rounded-lg'>
       <table className='w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400'>
@@ -20,7 +21,7 @@ const CustomTable = ({ caption, header, body }: CustomTableProps) => {
           description={caption.description}
         />
         <TableHead headers={header} />
-        <TableBody body={body} />
+        <TableBody body={body} actions={actions} />
       </table>
     </div>
   );

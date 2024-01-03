@@ -10,8 +10,13 @@ export interface Caption {
   description: string;
 }
 
+export interface BooksTableAction {
+  type: string;
+  action: (item: Book) => void;
+}
 export interface BookTable {
   caption: Caption;
   header: string[];
   body: Book[];
+  actions: BooksTableAction[];
 }

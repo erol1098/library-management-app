@@ -1,28 +1,24 @@
+import TableActions from '../TableActions';
+
 interface TableBodyProps {
-  body: any[];
+  body: Object[];
+  actions?: Object[];
 }
 
-const TableBody = ({ body }: TableBodyProps) => {
+const TableBody = ({ body, actions }: TableBodyProps) => {
   return (
     <tbody>
-      {body.map((item: any) => (
+      {body.map((item: Object, index: number) => (
         <tr
-          key={item.id}
+          key={index}
           className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600'
         >
-          {Object.keys(item).map((it: any) => (
+          {Object.values(item).map((it: string) => (
             <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
               {it}
             </td>
           ))}
-          <td className='px-6 py-4 text-right'>
-            <a
-              href='#'
-              className='font-medium text-blue-600 dark:text-blue-500 hover:underline'
-            >
-              Edit
-            </a>
-          </td>
+          <TableActions item={item} actions={actions} />
         </tr>
       ))}
     </tbody>
