@@ -1,11 +1,6 @@
-const baseUrl = process.env.NEXT_PUBLIC_API;
+import { Book } from '@/types/BookTypes';
 
-interface Book {
-  id?: string;
-  title: string;
-  author: string;
-  genre: string;
-}
+const baseUrl = process.env.NEXT_PUBLIC_API;
 
 export const getBooks = async () => {
   const response = await fetch(`${baseUrl}/books`);

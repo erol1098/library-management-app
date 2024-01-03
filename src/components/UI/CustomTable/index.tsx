@@ -8,12 +8,7 @@ interface CustomTableProps {
     description: string;
   };
   header: string[];
-  body: {
-    id?: string;
-    title: string;
-    author: string;
-    genre: string;
-  }[];
+  body: any[];
 }
 
 const CustomTable = ({ caption, header, body }: CustomTableProps) => {

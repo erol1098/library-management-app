@@ -1,28 +1,20 @@
 interface TableBodyProps {
-  body: {
-    id?: string;
-    title: string;
-    author: string;
-    genre: string;
-  }[];
+  body: any[];
 }
 
 const TableBody = ({ body }: TableBodyProps) => {
   return (
     <tbody>
-      {body.map(({ title, author, genre }) => (
+      {body.map((item: any) => (
         <tr
-          key={title}
+          key={item.id}
           className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600'
         >
-          <th
-            scope='row'
-            className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'
-          >
-            {title}
-          </th>
-          <td className='px-6 py-4'>{author}</td>
-          <td className='px-6 py-4'>{genre}</td>
+          {Object.keys(item).map((it: any) => (
+            <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+              {it}
+            </td>
+          ))}
           <td className='px-6 py-4 text-right'>
             <a
               href='#'

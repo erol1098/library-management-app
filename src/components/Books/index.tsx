@@ -1,22 +1,7 @@
 import { getBooks } from '@/libs/Books';
 import { CustomTable } from '../';
 
-interface Book {
-  id?: string;
-  title: string;
-  author: string;
-  genre: string;
-}
-
-interface Caption {
-  caption: string;
-  description: string;
-}
-interface BookTable {
-  caption: Caption;
-  header: string[];
-  body: Book[];
-}
+import { Book, BookTable } from '@/types/BookTypes';
 
 const Books = async () => {
   const books: Book[] = await getBooks();
@@ -26,7 +11,7 @@ const Books = async () => {
       caption: 'Kitaplar',
       description: 'Kitapların listesi',
     },
-    header: ['Başlık', 'Yazar', 'Tür'],
+    header: ['Kitap No', 'Başlık', 'Yazar', 'Tür'],
     body: books,
   };
 
