@@ -1,11 +1,9 @@
-import TableActions from '../TableActions';
-
 interface TableBodyProps {
   body: Object[];
-  actions?: Object[];
+  actions?: JSX.Element;
 }
 
-const TableBody = ({ body, actions }: TableBodyProps) => {
+const TableBody = ({ body, actions: Actions }: TableBodyProps) => {
   return (
     <tbody>
       {body.map((item: Object, index: number) => (
@@ -18,7 +16,7 @@ const TableBody = ({ body, actions }: TableBodyProps) => {
               {it}
             </td>
           ))}
-          <TableActions item={item} actions={actions} />
+          {Actions?.type && <Actions.type item={item} />}
         </tr>
       ))}
     </tbody>

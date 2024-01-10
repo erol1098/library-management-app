@@ -18,5 +18,5 @@ export interface BookTable {
   caption: Caption;
   header: string[];
   body: Book[];
-  actions: BooksTableAction[];
+  actions: JSX.Element;
 }

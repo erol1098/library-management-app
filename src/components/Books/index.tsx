@@ -1,11 +1,11 @@
 import { getBooks } from '@/libs/Books';
 import { CustomTable } from '../';
 
-import { Book, BookTable, BooksTableAction } from '@/types/BookTypes';
+import { Book, BookTable } from '@/types/BookTypes';
+import BooksTableActions from './BooksTableActions';
 
 const Books = async () => {
   const books: Book[] = await getBooks();
-
   const bookTable: BookTable = {
     caption: {
       caption: 'Okul Kütüphanesi Kitapları',
@@ -13,26 +13,7 @@ const Books = async () => {
     },
     header: ['Kitap No', 'Başlık', 'Yazar', 'Tür'],
     body: books,
-    actions: [
-      {
-        type: 'READ',
-        action: (item: Book) => {
-          console.log(item);
-        },
-      },
-      {
-        type: 'UPDATE',
-        action: (item: Book) => {
-          console.log(item);
-        },
-      },
-      {
-        type: 'DELETE',
-        action: (item: Book) => {
-          console.log(item);
-        },
-      },
-    ],
+    actions: <BooksTableActions />,
   };
 
   return (

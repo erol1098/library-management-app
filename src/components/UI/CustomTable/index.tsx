@@ -9,7 +9,7 @@ interface CustomTableProps {
   };
   header: string[];
   body: Object[];
-  actions?: Object[];
+  actions?: JSX.Element;
 }
 
 const CustomTable = ({ caption, header, body, actions }: CustomTableProps) => {

@@ -8,7 +8,7 @@ export const getBooks = async () => {
   return data as Book[];
 };
 
-export const getBook = async (id: string) => {
+export const getBook = async (id: number) => {
   const response = await fetch(`${baseUrl}/books/${id}`);
   const data = await response.json();
   return data as Book;
@@ -26,7 +26,7 @@ export const addBook = async (book: Book) => {
   return data as Book;
 };
 
-export const updateBook = async (id: string, book: Book) => {
+export const updateBook = async (id: number, book: Book) => {
   const response = await fetch(`${baseUrl}/books/${id}`, {
     method: 'PUT',
     headers: {
@@ -38,7 +38,7 @@ export const updateBook = async (id: string, book: Book) => {
   return data as Book;
 };
 
-export const deleteBook = async (id: string) => {
+export const deleteBook = async (id: number) => {
   await fetch(`${baseUrl}/books/${id}`, {
     method: 'DELETE',
   });
