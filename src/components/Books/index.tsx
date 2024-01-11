@@ -11,7 +11,7 @@ const Books = async () => {
       caption: 'Okul Kütüphanesi Kitapları',
       description: 'Okul kütüphanesinde bulunan kitapların listesi.',
     },
-    header: ['Kitap No', 'Başlık', 'Yazar', 'Tür'],
+    header: ['Kitap No', 'Başlık', 'Yazar', 'Tür', ""],
     body: books,
     actions: <BooksTableActions />,
   };
