@@ -1,11 +1,14 @@
-import { getBooks } from '@/libs/Books';
+import { getBooks, addBook } from '@/libs/Books';
 import { CustomTable } from '../';
 
 import { Book, BookTable } from '@/types/BookTypes';
 import BooksTableActions from './BooksTableActions';
+import Form from '../Form';
+import { ADD_BOOK_FORM_FIELDS } from '@/libs/Books/FormFields/addFormFields';
 
 const Books = async () => {
   const books: Book[] = await getBooks();
+
   const bookTable: BookTable = {
     caption: {
       caption: 'Okul Kütüphanesi Kitapları',
@@ -19,6 +22,12 @@ const Books = async () => {
   return (
     <div className='flex flex-col'>
       <CustomTable {...bookTable} />
+      <Form
+        fields={
+          ADD_BOOK_FORM_FIELDS
+        }
+        action={addBook}
+      />
     </div>
   );
 };
